@@ -1,3 +1,3 @@
 # kiwa-repository
 
-# Kiwa Discord APP repository
+Kiwa Discord APP repository
