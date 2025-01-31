@@ -6,6 +6,5 @@ module.exports = {
     .setDescription("Balas dengan Pong!"),
   async execute(interaction) {
     await interaction.reply("🏓 Pong!");
-    await interaction.followUp({ content: 'Messages cleared!', flags: 64 });
   },
 };
