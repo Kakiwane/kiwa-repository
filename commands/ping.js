@@ -10,13 +10,13 @@ module.exports = {
 
     // Buat embed yang rapi
     const pingEmbed = new EmbedBuilder()
-      .setColor('#211F20') // Warna biru Discord
+      .setColor('#FFFFFF') // Warna biru Discord
       .setTitle('🏓 Pong!')
       .setDescription(
-        `📶 **Client Latency:** \`${clientLatency}ms\`\n` +
-        `💓 **Shard Latency:** \`${shardLatency}ms\``
+        `:hourglass: \t**Client Latency:** \`${clientLatency}ms\`\n` +
+        `:watch: \t**Web Socket:** \`${shardLatency}ms\``
       )
-      .setFooter({ text: `Diminta oleh ${interaction.user.tag}`, iconURL: interaction.user.displayAvatarURL() })
+      .setFooter({ text: `Diminta oleh ${message.author.tag}`, iconURL: message.author.displayAvatarURL() })
       .setTimestamp();
 
     await interaction.reply({ embeds: [pingEmbed] });

@@ -2,7 +2,7 @@ module.exports = {
     name: "messageCreate",
     async execute(message, client) {
       if (message.author.bot) return; // Abaikan pesan dari bot
-      if (!message.content.startsWith("`")) return; // Pastikan pesan diawali dengan `
+      if (!message.content.startsWith("'")) return; // Pastikan pesan diawali dengan `
   
       const args = message.content.slice(1).trim().split(/ +/);
       const commandName = args.shift().toLowerCase();
