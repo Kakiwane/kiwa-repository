@@ -2,8 +2,8 @@ const { SlashCommandBuilder, EmbedBuilder } = require("discord.js");
 
 module.exports = {
   data: new SlashCommandBuilder()
-    .setName("ping")
-    .setDescription("Balas dengan Pong!"),
+    .setName("list")
+    .setDescription("Melihat list command!"),
   async execute(interaction) {
     const embed = new EmbedBuilder()
     .setAuthor({name: "List Command", iconURL: message.client.user.displayAvatarURL()})
