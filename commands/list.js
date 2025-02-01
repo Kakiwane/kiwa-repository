@@ -6,9 +6,9 @@ module.exports = {
     .setDescription("Melihat list command!"),
   async execute(interaction) {
     const embed = new EmbedBuilder()
-    .setAuthor({name: "List Command", iconURL: message.client.user.displayAvatarURL()})
-    .setDescription("Deskripsi")
-    .setColor('#211F20')
+      .setAuthor({name: "List Command", iconURL: interaction.client.user.displayAvatarURL()})
+      .setDescription("Deskripsi")
+      .setColor('#FFFFFF')
 
     await interaction.reply({ embeds: [embed] });
   },

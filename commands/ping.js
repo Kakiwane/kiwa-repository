@@ -13,7 +13,7 @@ module.exports = {
       .setTitle('🏓 Pong!')
       .setDescription(
         `:hourglass: **Client Latency:** \`${clientLatency}ms\`\n` +
-        `:watch: **Shard Latency:** \`${shardLatency}ms\``
+        `:watch: **WebSocket:** \`${shardLatency}ms\``
       )
       .setFooter({ text: `Diminta oleh ${interaction.user.tag}`, iconURL: interaction.user.displayAvatarURL() })
       .setTimestamp();
