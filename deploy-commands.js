@@ -11,7 +11,7 @@ for (const file of commandFiles) {
   const command = require(`./commands/${file}`);
   if (!command.data || !command.data.toJSON) {
     console.warn(`⚠️  Perintah di ${file} tidak valid dan dilewati.`);
-    continue; // Lewati file yang tidak valid
+    continue; 
   }
   commands.push(command.data.toJSON());
 }

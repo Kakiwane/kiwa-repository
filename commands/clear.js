@@ -14,6 +14,7 @@ module.exports = {
     const amount = interaction.options.getInteger("jumlah");
 
     if (amount < 1 || amount > 100) {
+      // Opsional
         // const { MessageFlags } = require("discord.js");
         await interaction.reply({ content: "❌ Kamu tidak memiliki izin!", flags: 64 });        
     }

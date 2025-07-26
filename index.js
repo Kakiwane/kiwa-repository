@@ -32,5 +32,5 @@ for (const file of eventFiles) {
   }
 }
 
-// Jalankan bot
+// running
 client.login(process.env.TOKEN);

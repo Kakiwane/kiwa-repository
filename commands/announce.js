@@ -18,4 +18,4 @@ module.exports = {
       await message.delete();
     },
   };
-  
+

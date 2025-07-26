@@ -57,7 +57,7 @@ module.exports = {
     },
 };
 
-
+// Tanpa SlashCommand
 
 // const { evaluate } = require("mathjs");
 
