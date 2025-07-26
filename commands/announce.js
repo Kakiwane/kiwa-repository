@@ -1,5 +1,3 @@
-const { measureMemory } = require("vm");
-
 module.exports = {
     name: "a",
     description: "Mengulang kembali teks yang diberikan setelah tanda (')",
@@ -7,7 +5,7 @@ module.exports = {
       const ownerId = "697334077094887428"; 
         if (message.author.id !== ownerId) {
             message.delete()
-            return message.channel.send(`🚫 Kamu tidak memiliki izin untuk menggunakan perintah ini ${message.author}!`);
+            return message.channel.send(`🚫 Kamu tidak memiliki izin untuk menggunakan perintah ini!`);
         }
 
 
