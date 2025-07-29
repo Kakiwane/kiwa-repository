@@ -12,7 +12,7 @@ module.exports = {
       .setColor('#FFFFFF')
       .setTitle('🏓 Pong!')
       .setDescription(
-        `:hourglass: **Client Latency:** \`${clientLatency}ms` 
+        `:hourglass: **Client Latency:** \`${clientLatency}ms``` 
         // `:watch: **WebSocket:** \`${shardLatency}ms\``
       )
       .setFooter({ text: `Diminta oleh ${interaction.user.tag}`, iconURL: interaction.user.displayAvatarURL() })
