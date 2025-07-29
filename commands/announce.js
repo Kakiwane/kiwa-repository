@@ -19,6 +19,7 @@
 //     },
 //   };
 
+
 const { EmbedBuilder } = require("discord.js");
 
 module.exports = {
@@ -29,10 +30,16 @@ module.exports = {
 
     // Jika bukan pemilik
     if (message.author.id !== ownerId) {
+      const botAvatarURL = message.client.user.displayAvatarURL();
+
       const embed = new EmbedBuilder()
         .setTitle("🚫 Akses Ditolak")
         .setDescription("Kamu tidak memiliki izin untuk menggunakan perintah ini!")
         .setColor(0xFF0000) // Merah
+        .setFooter({
+          text: message.client.user.username,
+          iconURL: botAvatarURL,
+        })
         .setTimestamp();
 
       return message.reply({ embeds: [embed] });
@@ -47,3 +54,4 @@ module.exports = {
     await message.delete(); // hanya menghapus jika user adalah owner
   },
 };
+
