@@ -2,7 +2,7 @@ const { SlashCommandBuilder, EmbedBuilder } = require('discord.js');
 
 module.exports = {
     data: new SlashCommandBuilder()
-        .setName('members')
+        .setName('sm')
         .setDescription('Show server member statistics')
         .setDMPermission(false),
     async execute(interaction) {
