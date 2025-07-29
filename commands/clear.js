@@ -34,7 +34,7 @@
 
 
 
-const { SlashCommandBuilder, PermissionFlagsBits } = require("discord.js");
+const { SlashCommandBuilder } = require("discord.js");
 
 module.exports = {
   data: new SlashCommandBuilder()
@@ -44,8 +44,7 @@ module.exports = {
       option.setName("jumlah")
         .setDescription("Jumlah pesan yang akan dihapus")
         .setRequired(true)
-    )
-    .setDefaultMemberPermissions(PermissionFlagsBits.ManageMessages),
+    ),
 
   async execute(interaction) {
     const amount = interaction.options.getInteger("jumlah");
