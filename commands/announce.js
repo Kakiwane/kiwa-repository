@@ -25,7 +25,7 @@ module.exports = {
 
     if (args.length === 0) {
       message.delete()
-      return message.channel.send(`Tolong berikan teks untuk dikutip Boss <@${user.id}>!`);
+      return message.channel.send(`Tolong berikan teks untuk dikutip Boss <@${message.author.id}>!`);
     }
 
     const text = args.join(" ");
