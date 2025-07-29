@@ -3,7 +3,7 @@ const { evaluate } = require("mathjs");
 
 module.exports = {
   data: new SlashCommandBuilder()
-    .setName("math")
+    .setName("m")
     .setDescription("Kalkulator sederhana")
     .addNumberOption(option =>
       option.setName("angka1")
