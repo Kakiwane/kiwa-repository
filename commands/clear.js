@@ -42,7 +42,7 @@ module.exports = {
     .setDescription("Menghapus sejumlah pesan di chat")
     .addIntegerOption(option =>
       option.setName("jumlah")
-        .setDescription("Jumlah pesan yang akan dihapus (boleh lebih dari 100)")
+        .setDescription("Jumlah pesan yang akan dihapus")
         .setRequired(true)
     )
     .setDefaultMemberPermissions(PermissionFlagsBits.ManageMessages),
