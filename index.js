@@ -3,9 +3,15 @@ const { Client, GatewayIntentBits, Collection } = require("discord.js");
 const fs = require("fs");
 const path = require("path");
 
-// Inisialisasi bot dengan intent yang diperlukan
+// Inisialisasi bot dengan semua intent yang diperlukan
 const client = new Client({
-  intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages, GatewayIntentBits.MessageContent],
+  intents: [
+    GatewayIntentBits.Guilds,
+    GatewayIntentBits.GuildMessages,
+    GatewayIntentBits.MessageContent,
+    GatewayIntentBits.GuildMembers,     // ✅ Diperlukan agar bisa baca jumlah dan daftar member
+    GatewayIntentBits.GuildPresences    // ✅ Diperlukan agar bisa tahu siapa yang online
+  ],
 });
 
 client.commands = new Collection();
