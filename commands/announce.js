@@ -25,7 +25,7 @@ module.exports = {
 
     if (args.length === 0) {
       message.delete()
-      return message.channel.send("❌ Tolong berikan teks untuk dikutip!");
+      return message.channel.send("Tolong berikan teks untuk dikutip Boss @697334077094887428!");
     }
 
     const text = args.join(" ");
