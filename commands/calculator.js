@@ -57,10 +57,10 @@ module.exports = {
     },
 };
 
+
+
+
 // Tanpa SlashCommand
-
-const { evaluate } = require("mathjs");
-
 module.exports = {
     name: "m",
     description: "Kalkulator sederhana",
