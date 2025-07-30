@@ -6,7 +6,7 @@ const { createCanvas, registerFont } = require('canvas');
 
 module.exports = {
     data: new SlashCommandBuilder()
-        .setName('pingimg')
+        .setName('ping')
         .setDescription('🏓 Tampilkan latency dalam bentuk gambar'),
 
     async execute(interaction) {
