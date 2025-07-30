@@ -6,7 +6,6 @@ module.exports = {
         .setDescription('🏓 Cek latency bot'),
 
     async execute(interaction) {
-        // Kirim sementara untuk mengukur client latency
         const sent = await interaction.reply({
             content: '⏱ Mengukur latency...',
             fetchReply: true
@@ -15,13 +14,16 @@ module.exports = {
         const clientLatency = sent.createdTimestamp - interaction.createdTimestamp;
         const shardLatency = interaction.client.ws.ping;
 
-        // Hitung uptime
         const uptime = Date.now() - interaction.client.startTime;
         const formattedUptime = formatDuration(uptime);
 
-        // Buat embed
+        // Warna berdasarkan latency
+        let color = '#57F287'; // hijau default
+        if (clientLatency >= 500 || shardLatency >= 500) color = '#ED4245'; // merah
+        else if (clientLatency >= 250 || shardLatency >= 250) color = '#FEE75C'; // kuning
+
         const embed = new EmbedBuilder()
-            .setColor('#5865F2')
+            .setColor(color)
             .setTitle('🏓 PONG / LATENCY')
             .addFields(
                 {
@@ -46,7 +48,6 @@ module.exports = {
     }
 };
 
-// Fungsi konversi ms -> h m s
 function formatDuration(ms) {
     const sec = Math.floor((ms / 1000) % 60);
     const min = Math.floor((ms / 1000 / 60) % 60);
