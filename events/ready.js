@@ -5,6 +5,7 @@ module.exports = {
     once: true,
     execute(client) {
       console.log(`✅ Bot berhasil login sebagai ${client.user.tag}`);
+      client.startTime = Date.now();
       client.user.setActivity("/list", { type: ActivityType.Playing });
     },
   };
