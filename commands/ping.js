@@ -39,11 +39,6 @@ module.exports = {
                     value: `\`${formattedUptime}\``,
                     inline: false
                 },
-                {
-                    name: '\u200B',
-                    value: '_Issues on Discord\'s side could cause weird latency._',
-                    inline: false
-                }
             )
             .setTimestamp();
 
