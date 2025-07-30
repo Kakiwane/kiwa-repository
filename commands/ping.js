@@ -2,25 +2,25 @@ const { SlashCommandBuilder, EmbedBuilder } = require("discord.js");
 
 module.exports = {
   data: new SlashCommandBuilder()
-    .setName("ping")
-    .setDescription("Balas dengan Pong!"),
+    .setName('ping')
+    .setDescription('Menampilkan latensi bot (ping)'),
+  
   async execute(interaction) {
-    const clientLatency = Date.now() - interaction.createdTimestamp;
-    const shardLatency = Math.round(interaction.client.ws.ping);
+    const sent = await interaction.deferReply({ fetchReply: true });
+    const latency = sent.createdTimestamp - interaction.createdTimestamp;
+    const apiLatency = interaction.client.ws.ping;
 
-    const pingEmbed = new EmbedBuilder()
-      .setColor('#FFFFFF')
+    const embed = new EmbedBuilder()
       .setTitle('🏓 Pong!')
-      .setDescription(
-        `:hourglass: **Client Latency:** \`${clientLatency}ms\``
+      .setDescription('Berikut informasi latensi bot:')
+      .addFields(
+        { name: '💡 Respons Bot', value: `${latency}ms`, inline: true },
+        { name: '📡 API WebSocket', value: `${apiLatency}ms`, inline: true }
       )
-      .setFooter({ text: `Diminta oleh ${interaction.user.tag}`, iconURL: interaction.user.displayAvatarURL() })
+      .setColor(latency < 200 ? 'Green' : latency < 400 ? 'Yellow' : 'Red')
+      .setFooter({ text: `Direspons oleh ${interaction.client.user.username}`, iconURL: interaction.client.user.displayAvatarURL() })
       .setTimestamp();
 
-    await interaction.reply({ embeds: [pingEmbed] });
-  },
+    await interaction.editReply({ embeds: [embed] });
+  }
 };
-
-
-
-        // `:watch: **WebSocket:** \`${shardLatency}ms\``
